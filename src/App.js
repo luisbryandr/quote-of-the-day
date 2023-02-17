@@ -23,11 +23,7 @@ function App() {
         <form>
           <label>Enter your Favorite Quote Here:</label>
           <br></br>
-          <input
-            type="text"
-            placeholder="Your Favorite Quote Here"
-            name="quote"
-          />
+          <textarea name="paragraph" cols="30" rows="10"></textarea>
           <br></br>
           <label>Enter the Author</label>
           <br></br>
@@ -43,11 +39,8 @@ function App() {
 export default App
 
 const StyledForm = styled.div`
-  display: flex;
-  align-items: center;
-
   margin-top: 40px;
-  border: black solid 2px;
+  // border: black solid 2px;
   width: 60%;
   height: 40vh;
 `
@@ -56,7 +49,7 @@ const MainDiv = styled.div`
 
   align-items: center;
   flex-direction: column;
-  background-color: grey;
+  // background-color: grey;
   color: white;
   margin: auto;
   width: 80%;
@@ -66,7 +59,7 @@ const Header = styled.div`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  border: black solid 2px;
+  // border: black solid 2px;
   width: 90%;
   height: 40vh;
 `
