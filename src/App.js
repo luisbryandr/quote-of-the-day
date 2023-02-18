@@ -1,5 +1,6 @@
 import "./App.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+
 import quotes from "./assets/dummyData"
 import styled from "styled-components"
 
@@ -8,25 +9,32 @@ function App() {
     "The quote of the day is: Click the button to find out, happy learning"
   )
 
+  console.log(entry)
+
   const generateQuote = () => {
     const newQuote = Math.floor(Math.random() * quotes.length)
     console.log(newQuote)
+
     setEntry(`"${quotes[newQuote].quote}" -${quotes[newQuote].author} `)
   }
   return (
     <MainDiv className="App">
       <Header>
-        <h1>{entry}</h1>
+        <p className="entryone">{entry}</p>
         <button onClick={generateQuote}>Generate Quote</button>
       </Header>
       <StyledForm>
         <form>
-          <label>Enter your Favorite Quote Here:</label>
-          <br></br>
+          <label>
+            <p className="para">Enter your Favorite Quote Here:</p>
+          </label>
+
           <textarea name="paragraph" cols="30" rows="10"></textarea>
           <br></br>
-          <label>Enter the Author</label>
-          <br></br>
+          <label>
+            <p className="author">Enter the Author</p>
+          </label>
+
           <input type="text" placeholder="Author Here" name="author" />
           <br></br>
           <button>Enter</button>
@@ -58,17 +66,22 @@ const Header = styled.div`
   // border: black solid 2px;
   width: 90%;
   height: 40vh;
-h1 {
-  color: white;
-  opacity: 100;
-  transition: opacity 1s ease-in-out;
-}
 }
   `
 
 const StyledForm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
   margin-top: 40px;
-  border: black solid 2px;
-  width: 80%;
-  height: 40vh;
+
+  //border: black solid 2px;
+  width: 90%;
+  height: 60vh;
+
+  .para, .author {
+    color: white;
+    font-size: 30px
+  }
 `
