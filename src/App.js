@@ -37,33 +37,38 @@ function App() {
 }
 
 export default App
-
-const StyledForm = styled.div`
-  margin-top: 40px;
-  // border: black solid 2px;
-  width: 60%;
-  height: 40vh;
-`
 const MainDiv = styled.div`
   display: flex;
 
   align-items: center;
   flex-direction: column;
-  background-color: grey;
+  // background-color: grey;
   color: black;
 
   width: 80%;
   height: 80vh;
   margin: 0 auto;
 `
+
 const Header = styled.div`
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   align-items: center;
   justify-content: space-between;
-  border: black solid 2px;
+  // border: black solid 2px;
   width: 90%;
   height: 40vh;
+h1 {
+  color: white;
+  opacity: 100;
+  transition: opacity 1s ease-in-out;
+}
+}
+  `
 
-  }
+const StyledForm = styled.div`
+  margin-top: 40px;
+  border: black solid 2px;
+  width: 80%;
+  height: 40vh;
 `

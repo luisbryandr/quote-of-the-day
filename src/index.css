@@ -10,7 +10,7 @@ body {
   background-image: url(./assets/sunsetBG.jpg);
   background-size: cover;
   height: 100vh;
-  border: 10px blue solid;
+  /* border: 10px blue solid; */
   justify-content: center;
 }
 
