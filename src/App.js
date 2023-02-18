@@ -49,17 +49,21 @@ const MainDiv = styled.div`
 
   align-items: center;
   flex-direction: column;
-  // background-color: grey;
-  color: white;
-  margin: auto;
+  background-color: grey;
+  color: black;
+
   width: 80%;
   height: 80vh;
+  margin: 0 auto;
 `
 const Header = styled.div`
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
   justify-content: space-between;
-  // border: black solid 2px;
+  border: black solid 2px;
   width: 90%;
   height: 40vh;
+
+  }
 `
