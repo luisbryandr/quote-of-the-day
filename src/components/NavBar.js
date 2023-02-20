@@ -1,25 +1,25 @@
 import React from "react"
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 
-function Navbar() {
+function NavBar() {
   return (
-    <Router>
+
       <div>
         <nav>
           <ul>
             <li>
-              <NavLink exact to="/">
+              <Link exact to="/">
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink to="/form">Your quote</NavLink>
+              <Link to="/form">Your quote</Link>
             </li>
           </ul>
         </nav>
       </div>
-    </Router>
+    
   )
 }
 
-export default Navbar
+export default NavBar

@@ -1,9 +1,11 @@
-/***  Import React Tools Here***/
+/***  Import React Tools Here ***/
 import { useState } from "react"
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 /*** Import Components Here ***/
-import Form from './components/Form'
+import Home from "./components/Home"
+import Form from "./components/Form"
+import NavBar from "./components/NavBar"
 
 /*** Import Styles heres ***/
 import styled from "styled-components"
@@ -29,19 +31,26 @@ function App() {
   return (
     <div>
       <MainDiv className="App">
+       <Router>
+        <NavBar/>
         <Header>
           <p className="entryone">{entry}</p>
           <Button variant="contained" onClick={generateQuote}>
             Generate Quote
           </Button>
         </Header>
-        <Form />
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/form' component={Form}/>
+          </Switch>
+        </Router>
       </MainDiv>
     </div>
   )
 }
 
 export default App
+
 const MainDiv = styled.div`
   display: flex;
 
