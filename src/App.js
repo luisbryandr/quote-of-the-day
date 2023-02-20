@@ -1,8 +1,12 @@
 import "./App.css"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom"
 
 import quotes from "./assets/dummyData"
 import styled from "styled-components"
+import Button from "@mui/material/Button"
+import DeleteIcon from "@mui/icons-material/Delete"
+import SendIcon from "@mui/icons-material/Send"
 
 function App() {
   const [entry, setEntry] = useState(
@@ -18,29 +22,35 @@ function App() {
     setEntry(`"${quotes[newQuote].quote}" -${quotes[newQuote].author} `)
   }
   return (
-    <MainDiv className="App">
-      <Header>
-        <p className="entryone">{entry}</p>
-        <button onClick={generateQuote}>Generate Quote</button>
-      </Header>
-      <StyledForm>
-        <form>
-          <label>
-            <p className="para">Enter your Favorite Quote Here:</p>
-          </label>
+    <div>
+      <MainDiv className="App">
+        <Header>
+          <p className="entryone">{entry}</p>
+          <Button variant="contained" onClick={generateQuote}>
+            Generate Quote
+          </Button>
+        </Header>
+        <StyledForm>
+          <form>
+            <label>
+              <p className="para">Enter your Favorite Quote Here:</p>
+            </label>
 
-          <textarea name="paragraph" cols="30" rows="10"></textarea>
-          <br></br>
-          <label>
-            <p className="author">Enter the Author</p>
-          </label>
+            <textarea name="paragraph" cols="30" rows="10"></textarea>
+            <br></br>
+            <label>
+              <p className="author">Enter the Author</p>
+            </label>
 
-          <input type="text" placeholder="Author Here" name="author" />
-          <br></br>
-          <button>Enter</button>
-        </form>
-      </StyledForm>
-    </MainDiv>
+            <input type="text" placeholder="Author Here" name="author" />
+            <br></br>
+            <Button variant="contained" endIcon={<SendIcon />}>
+              Enter
+            </Button>
+          </form>
+        </StyledForm>
+      </MainDiv>
+    </div>
   )
 }
 
