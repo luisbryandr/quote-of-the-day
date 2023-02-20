@@ -1,12 +1,17 @@
-import "./App.css"
+/***  Import React Tools Here***/
 import { useState } from "react"
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom"
 
-import quotes from "./assets/dummyData"
+/*** Import Components Here ***/
+import Form from './components/Form'
+
+/*** Import Styles heres ***/
 import styled from "styled-components"
 import Button from "@mui/material/Button"
-import DeleteIcon from "@mui/icons-material/Delete"
-import SendIcon from "@mui/icons-material/Send"
+import "./App.css"
+
+/*** Import Data Here***/
+import quotes from "./assets/dummyData"
 
 function App() {
   const [entry, setEntry] = useState(
@@ -30,25 +35,7 @@ function App() {
             Generate Quote
           </Button>
         </Header>
-        <StyledForm>
-          <form>
-            <label>
-              <p className="para">Enter your Favorite Quote Here:</p>
-            </label>
-
-            <textarea name="paragraph" cols="30" rows="10"></textarea>
-            <br></br>
-            <label>
-              <p className="author">Enter the Author</p>
-            </label>
-
-            <input type="text" placeholder="Author Here" name="author" />
-            <br></br>
-            <Button variant="contained" endIcon={<SendIcon />}>
-              Enter
-            </Button>
-          </form>
-        </StyledForm>
+        <Form />
       </MainDiv>
     </div>
   )
@@ -78,20 +65,3 @@ const Header = styled.div`
   height: 40vh;
 }
   `
-
-const StyledForm = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-  margin-top: 40px;
-
-  //border: black solid 2px;
-  width: 90%;
-  height: 60vh;
-
-  .para, .author {
-    color: white;
-    font-size: 30px
-  }
-`
