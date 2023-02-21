@@ -1,21 +1,23 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: w
+  
+`
+
 
 function NavBar() {
   return (
 
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link exact to="/">
+              <StyledLink exact to="/">
                 Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/form">Your quote</Link>
-            </li>
-          </ul>
+              </StyledLink>
+              <StyledLink to="/form" >Your quote</StyledLink>
         </nav>
       </div>
     
