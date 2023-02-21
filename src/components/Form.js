@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 import Button from '@mui/material/Button'
 import SendIcon from '@mui/icons-material/Send'
 
 const Form = () => {
+
+    const [values, setValues]  = useState({id: "", quote: "", auth:"" })
+
+
+
+    const sendData =(event)=>{
+      event.preventDefault()
+ console.log(event)
+   
+  // const newFormData = { 
+  //   paragraph: event.target.paragraph.value,
+  //   author: event.target.author.value
+  // }
+
+  // setValues([...values, newFormData])
+}
+
+
   return (
     <StyledForm>
-          <form>
+          <form onSubmit={sendData}>
             <label>
               <p className="para">Enter your Favorite Quote Here:</p>
             </label>
@@ -14,12 +32,13 @@ const Form = () => {
             <textarea name="paragraph" cols="30" rows="10"></textarea>
             <br></br>
             <label>
-              <p className="author">Enter the Author</p>
+              <p className="author" name="author">Enter the Author</p>
             </label>
 
             <input type="text" placeholder="Author Here" name="author" />
             <br></br>
-            <Button variant="contained" endIcon={<SendIcon />}>
+            <br></br>
+            <Button type="submit" variant="contained" endIcon={<SendIcon />}>
               Enter
             </Button>
           </form>
