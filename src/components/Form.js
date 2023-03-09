@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Button from "@mui/material/Button"
 import SendIcon from "@mui/icons-material/Send"
+import quotesBank from "../assets/dummyData"
 
 const Form = () => {
-  const [values, setValues] = useState({ quote: "", auth: "" })
+  const [values, setValues] = useState({ quote: "", author: "" })
 
   const handleChange = (event) => {
     setValues({
@@ -18,10 +19,12 @@ const Form = () => {
     console.log(event)
 
     const newFormData = {
-      quote: values.phrase.trim(),
-      auth: values.author.trim(),
+      quote: values.quote.trim(),
+      author: values.author.trim(),
     }
     console.log(newFormData)
+    quotesBank.push(newFormData)
+    console.log(quotesBank)
   }
 
   return (
@@ -32,7 +35,7 @@ const Form = () => {
         </label>
 
         <textarea
-          name="phrase"
+          name="quote"
           cols="30"
           rows="10"
           onChange={handleChange}
