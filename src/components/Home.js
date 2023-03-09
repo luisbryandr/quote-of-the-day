@@ -1,38 +1,35 @@
 /*** State Management ***/
-import { useState } from "react";
-import React from "react";
-import styled from "styled-components";
+import { useState } from "react"
+import React from "react"
+import styled from "styled-components"
 import Button from "@mui/material/Button"
 /*** Import Data Here***/
-import quotes from "../assets/dummyData";
+import quotes from "../assets/dummyData"
 
+const Home = () => {
+  const [entry, setEntry] = useState(
+    "Click the button to get your Quote of the Day"
+  )
 
+  console.log(entry)
 
+  const generateQuote = () => {
+    const newQuote = Math.floor(Math.random() * quotes.length)
+    console.log(newQuote)
 
-const Home =()=> {
-    const [entry, setEntry] = useState(
-        "The quote of the day is: Click the button to find out, happy learning"
-      )
-    
-      console.log(entry)
-    
-      const generateQuote = () => {
-        const newQuote = Math.floor(Math.random() * quotes.length)
-        console.log(newQuote)
-    
-        setEntry(`"${quotes[newQuote].quote}" -${quotes[newQuote].author} `)
-      }
-    return (   
-        <Header>
-          <p className="entryone">{entry}</p>
-          <Button variant="contained" onClick={generateQuote}>
-            Generate Quote
-          </Button>
-        </Header>
-        )
-    };
+    setEntry(`"${quotes[newQuote].quote}" -${quotes[newQuote].author} `)
+  }
+  return (
+    <Header>
+      <p className="entryone">{entry}</p>
+      <Button variant="contained" onClick={generateQuote}>
+        Generate Quote
+      </Button>
+    </Header>
+  )
+}
 
-export default Home;
+export default Home
 
 const Header = styled.div`
     margin-top: 20px;
@@ -50,8 +47,8 @@ const Header = styled.div`
 }
   `
 
-  const ButtonOne = styled.a`
-    display: inline-block;
+const ButtonOne = styled.a`
+  display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
   margin: 0.5rem 1rem;
@@ -59,5 +56,4 @@ const Header = styled.div`
   background: transparent;
   color: white;
   border: 2px solid white;
-
-  `
+`

@@ -6,10 +6,10 @@ function NavBar() {
   return (
     <div>
       <Nav>
-        <Link exact to="/">
+        <StyledLink exact to="/">
           Home
-        </Link>
-        <Link to="/form">Your quote</Link>
+        </StyledLink>
+        <StyledLink to="/form">Your quote</StyledLink>
       </Nav>
     </div>
   )
@@ -18,10 +18,12 @@ function NavBar() {
 export default NavBar
 
 const StyledLink = styled(Link)`
-  // text-decoration: none;
+  text-decoration: none;
   color: white;
-  // border: white 1px solid;
-  padding: 3px;
+  // border: 1px blue solid;
+  background-color: #1976d2;
+  border-radius: 4px;
+  padding: 7px;
   hover {
     background-color: yellow;
   }
