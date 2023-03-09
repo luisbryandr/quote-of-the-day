@@ -43,6 +43,10 @@ const Header = styled.div`
   // border: black solid 2px;
   width: 90%;
   height: 40vh;
+
+  p {
+    
+  }
 }
   `
 
