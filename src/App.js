@@ -1,6 +1,6 @@
 /***  Import React Tools Here ***/
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from "react-router-dom"
 
 /*** Import Components Here ***/
 import Home from "./components/Home"
@@ -13,17 +13,19 @@ import "./App.css"
 
 function App() {
   return (
-    <div>
-      <MainDiv className="App">
-        <Router>
-          <NavBar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/form" component={Form} />
-          </Switch>
-        </Router>
-      </MainDiv>
-    </div>
+    <MainDiv>
+    <Router>
+        <NavBar/>
+        <Switch>   
+        <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/form">
+            <Form />
+          </Route>
+        </Switch>
+      </Router>
+    </MainDiv>
   )
 }
 
