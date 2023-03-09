@@ -1,6 +1,6 @@
 /***  Import React Tools Here ***/
 
-import { BrowserRouter as Router, Switch, Route, Routes, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 /*** Import Components Here ***/
 import Home from "./components/Home"
@@ -16,14 +16,10 @@ function App() {
     <MainDiv>
     <Router>
         <NavBar/>
-        <Switch>   
-        <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/form">
-            <Form />
-          </Route>
-        </Switch>
+        <Routes>   
+            <Route index element={<Home/>}/>
+            <Route path="form" element={<Form />}/>
+        </Routes> 
       </Router>
     </MainDiv>
   )
