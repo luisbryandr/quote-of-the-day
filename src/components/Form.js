@@ -22,9 +22,7 @@ const Form = () => {
       quote: values.quote.trim(),
       author: values.author.trim(),
     }
-    console.log(newFormData)
-    quotesBank.push(newFormData)
-    console.log(quotesBank)
+    quotesBank.push(newFormData) //in the future this would be a "post" call to our DB
   }
 
   return (

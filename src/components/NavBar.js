@@ -6,10 +6,10 @@ function NavBar() {
   return (
     <div>
       <Nav>
-        <StyledLink exact to="/">
+        <Link exact to="/">
           Home
-        </StyledLink>
-        <StyledLink to="/form">Your quote</StyledLink>
+        </Link>
+        <Link to="/form">Your quote</Link>
       </Nav>
     </div>
   )
