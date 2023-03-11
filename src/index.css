@@ -14,6 +14,12 @@ body {
   justify-content: center;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url(./assets/sunset.jpg);
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
