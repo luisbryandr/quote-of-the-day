@@ -37,7 +37,7 @@ const Form = () => {
           cols="30"
           rows="10"
           onChange={handleChange}
-          placeholder="Type in or paste in a quote by the Author's name you provided in the description above"
+          placeholder="Type in or paste in your favorite quote. Don't forget to enter its author below!"
         ></textarea>
         <br></br>
         <label>
